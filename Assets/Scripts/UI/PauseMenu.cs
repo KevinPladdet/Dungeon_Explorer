@@ -40,7 +40,6 @@ public class PauseMenu : MonoBehaviour
                 objectives.SetActive(true);
                 playerCamera.SetActive(true);
                 optionsBGCamera.SetActive(false);
-                onHoverText.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 Time.timeScale = 1f;
                 isPaused = false;
@@ -74,7 +73,6 @@ public class PauseMenu : MonoBehaviour
         objectives.SetActive(true);
         playerCamera.SetActive(true);
         optionsBGCamera.SetActive(false);
-        onHoverText.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
         isPaused = false;
