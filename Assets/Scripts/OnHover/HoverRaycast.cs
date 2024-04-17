@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 using TMPro;
 
 public class HoverRaycast : MonoBehaviour
@@ -21,6 +22,7 @@ public class HoverRaycast : MonoBehaviour
     {
         hoverTextObject = GameObject.Find("OnHoverText");
         hoverText = hoverTextObject.GetComponent<TextMeshProUGUI>();
+        hoverTextObject.gameObject.SetActive(false);
     }
 
     void Update()
@@ -57,6 +59,7 @@ public class HoverRaycast : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
+        
 
         if (Physics.Raycast(ray, out hit, raycastRange))
         {
@@ -65,7 +68,7 @@ public class HoverRaycast : MonoBehaviour
                 hoverTextObject.gameObject.SetActive(true);
                 hoverText.text = "Press \"" + interactButton + "\" to awaken";
             }
-            else if (hit.collider.CompareTag(torchTag) && (GameObject.FindGameObjectsWithTag("TorchStickTag").Length == 0))  
+            else if (hit.collider.CompareTag(torchTag) && (GameObject.FindGameObjectsWithTag("TorchStickTag").Length == 0))
             {
                 hoverTextObject.gameObject.SetActive(true);
                 hoverText.text = "Press \"" + interactButton + "\" to light torch";
@@ -84,10 +87,6 @@ public class HoverRaycast : MonoBehaviour
             {
                 hoverTextObject.gameObject.SetActive(false);
             }
-        }
-        else
-        {
-            hoverTextObject.gameObject.SetActive(false);
         }
     }
 }
