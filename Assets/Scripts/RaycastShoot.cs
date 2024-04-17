@@ -14,7 +14,6 @@ public class RaycastShoot : MonoBehaviour
 
     public void OnShoot(InputAction.CallbackContext context)
     {
-        Debug.Log("onShoot");
         Ray ray = new Ray
         {
             origin = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0)),
@@ -24,7 +23,6 @@ public class RaycastShoot : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, range))
         {
-            Debug.Log("hitting something");
             //IInteractable interactable = hitInfo.collider.GetComponent<IInteractable>();
             //if(interactable != null)
             //{

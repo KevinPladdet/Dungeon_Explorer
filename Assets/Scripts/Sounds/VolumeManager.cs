@@ -56,6 +56,11 @@ public class VolumeManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void musicAudio()
+    {
+        musicClip.volume = 1f;
+    }
+
     // Every time a torch is lit
     public void lightFireAudio()
     {

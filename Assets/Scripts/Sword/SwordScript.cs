@@ -26,6 +26,12 @@ public class SwordScript : MonoBehaviour
 
     [SerializeField] private GameObject objectives;
 
+    [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject healthBar;
+
+    [SerializeField] private GameObject bgCamera;
+    [SerializeField] private GameObject playerCamera;
+
     void Start()
     {
         AM = VolumeManager.Instance;
@@ -86,6 +92,10 @@ public class SwordScript : MonoBehaviour
             AM.GetComponent<VolumeManager>().playerWinAudio();
             objectives.SetActive(false);
             winScreen.SetActive(true);
+            mainMenu.SetActive(false);
+            healthBar.SetActive(false);
+            playerCamera.SetActive(false);
+            bgCamera.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0f;
         }

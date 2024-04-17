@@ -15,6 +15,12 @@ public class PlayerHealth : MonoBehaviour
 	[SerializeField] private GameObject gameOverScreen;
 	[SerializeField] private GameObject objectives;
 
+	[SerializeField] private GameObject mainMenu;
+	[SerializeField] private GameObject healthBarObject;
+
+	[SerializeField] private GameObject optionsBgCamera;
+	[SerializeField] private GameObject playerCamera;
+
 	private VolumeManager AM;
 
 	void Start()
@@ -44,6 +50,10 @@ public class PlayerHealth : MonoBehaviour
 			AM.GetComponent<VolumeManager>().playerDeathAudio();
 			objectives.SetActive(false);
 			gameOverScreen.SetActive(true);
+			mainMenu.SetActive(false);
+			healthBarObject.SetActive(false);
+			playerCamera.SetActive(false);
+			optionsBgCamera.SetActive(true);
 			Cursor.lockState = CursorLockMode.None;
 			Time.timeScale = 0f;
 		}
