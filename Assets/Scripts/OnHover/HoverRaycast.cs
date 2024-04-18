@@ -85,8 +85,14 @@ public class HoverRaycast : MonoBehaviour
             }
             else
             {
+                hoverText.text = "";
                 hoverTextObject.gameObject.SetActive(false);
             }
+        }
+        else
+        {
+            hoverText.text = "";
+            hoverTextObject.gameObject.SetActive(false);
         }
     }
 }
