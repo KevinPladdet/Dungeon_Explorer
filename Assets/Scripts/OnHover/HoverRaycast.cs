@@ -55,7 +55,7 @@ public class HoverRaycast : MonoBehaviour
         }
 
         // This is in update, because if the player disconnects or reconnects a controller in the middle of the game, it will update the displayed text
-        hideObjectiveText.text = "Press \"" + objectiveButton + "\" to hide objectives";
+        hideObjectiveText.text = "Press " + objectiveButton + " to hide objectives";
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
@@ -66,22 +66,22 @@ public class HoverRaycast : MonoBehaviour
             if (hit.collider.CompareTag(jewelTag))
             {
                 hoverTextObject.gameObject.SetActive(true);
-                hoverText.text = "Press \"" + interactButton + "\" to awaken";
+                hoverText.text = "Press " + interactButton + " to awaken";
             }
             else if (hit.collider.CompareTag(torchTag) && (GameObject.FindGameObjectsWithTag("TorchStickTag").Length == 0))
             {
                 hoverTextObject.gameObject.SetActive(true);
-                hoverText.text = "Press \"" + interactButton + "\" to light torch";
+                hoverText.text = "Press " + interactButton + " to light torch";
             }
             else if (hit.collider.CompareTag(torchStickTag))
             {
                 hoverTextObject.gameObject.SetActive(true);
-                hoverText.text = "Press \"" + interactButton + "\" to pick up torch";
+                hoverText.text = "Press " + interactButton + " to pick up torch";
             }
             else if (hit.collider.CompareTag(swordTag))
             {
                 hoverTextObject.gameObject.SetActive(true);
-                hoverText.text = "Press \"" + interactButton + "\" to pick up sword";
+                hoverText.text = "Press " + interactButton + " to pick up sword";
             }
             else
             {
